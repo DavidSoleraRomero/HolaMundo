@@ -19,8 +19,8 @@ namespace HolaMundo
             // ejercicioSeis();
             // ejercicioSiete();
             // ejercicioOcho();
-            ejercicioNueve();
-            ejercicioDiez();
+            // ejercicioNueve();
+            Console.WriteLine($"Devuelve: {ejercicioDiez()}");
         }
 
         static void ejercicioUno()
@@ -136,9 +136,15 @@ namespace HolaMundo
             Console.WriteLine($"Porcentaje del socio 3: {Math.Round(thirdShareholder * 100 / totalInvestment, 2)} aproximadamente");
         }
 
-        static void ejercicioDiez()
+        static bool ejercicioDiez()
         {
-
+            Console.Write("Introduce texto para comprobar si empieza por www: ");
+            string url = Console.ReadLine();
+            if (url.Length < 3)
+                return false;
+            if (url.StartsWith("www"))
+                return true;
+            return false;
         }
     }
 }
